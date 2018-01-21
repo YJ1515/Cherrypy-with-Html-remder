@@ -1,0 +1,46 @@
+<html>
+<body>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
+    <div class="container">
+<form action="/search" method="GET"> 
+  <div class="row">
+    <div class="col-xs-6 col-md-4">
+      <div class="input-group">
+   <input type="text" class="form-control" placeholder="Search" id="txtSearch" name='search_name'/>
+   <div class="input-group-btn">
+        <button class="btn btn-primary" type="submit">
+        <span class="glyphicon glyphicon-search"></span>
+        </button>
+   </div>
+   </div>
+    </div>
+  </div>
+</form>
+    </div>
+   <div class="table-responsive">          
+  <table class="table">
+    <thead>
+      <tr>
+        <th>SC_CODE</th>
+        <th>SC_NAME</th>
+        <th>HIGH</th>
+        <th>LOW</th>
+        <th>CLOSE</th>
+        <th>OPEN</th>
+      </tr>
+    </thead>
+      % for data in list_of_data:
+    <tbody>
+      <tr>
+        <td>${data.get('SC_CODE')}</td>
+        <td>${data.get('SC_NAME')}</td>
+        <td>${data.get('HIGH')}</td>
+        <td>${data.get('LOW')}</td>
+        <td>${data.get('CLOSE')}</td>
+        <td>${data.get('OPEN')}</td>
+      </tr>
+    </tbody>
+       % endfor
+  </table>
+</body>
+</html>
